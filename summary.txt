@@ -1,0 +1,66 @@
+1. 
+I chose Flask and Python because they are the easiest to use and simplest to understand when making a REST API.
+They are also the most popular choices when making a REST API -- when I needed documentation, it was very easy 
+to find it.
+I used heapq because I thought that the most efficient way to keep track of which transaction was oldest would 
+be to use a heap-like data structure, as extracting the oldest element takes constant time in this sort of 
+structure.
+This saves a lot of time compared to a list, where we would probably have to search the whole list to find the 
+oldest transaction.
+I used defaultdict just because it would be easier to not have to manually instantiate a new payer each time 
+a new one is introduced -- defaultdict instantiates new items in a dictionary automatically.
+
+2.
+I would say that the first advantage to my solution is time complexity. 
+My solution is very efficient, as it uses a heap structure to keep track of transaction dates.
+The heap is sorted by tuples which contain the date and time of each transaction.
+When I add an element to the heap, it compares the element's timestamp to other timestamps and inserts it while 
+keeping the tree structure in logarithmic time.
+
+Another advantage is flexibility.
+My program is quite flexible, in that it can consider many different cases(assuming they align with the problem 
+spec).
+I tested my program in a decently rigorous way, so I know it can handle multiple transactions with the same 
+timestamp, adding and spending in different orders, etc..
+
+One disadvantage would be error handling.
+My code doesn't do that great a job of handling incorrect inputs and would definitely break if you gave it 
+JSONs that didn't align with the problem spec.
+
+Another disadvantage is probably readability.
+In the /add method, I do some logic to convert the ISO date/time format to an array of relevant numbers.
+This logic is a little bit difficult to parse, but is the only thing that I could think of.
+I tried exploring the datetime documentation and couldn't find anything super helpful, so I decided to just 
+do it myself.
+
+Another disadvantage is storage.
+With my implementation I store everything in python dictionaries and arrays.
+If I were to use this in production, I would probably have to create a database and store everything there 
+to account for a large amount of inputs.
+
+3.
+A school project that was one of my favorite projects so far was in my Computer Vision class and was entitled 
+Camera Geometry.
+In it, we were tasked with creating a 3D reconstruction of a scene using what we had learned in class about 
+the Camera Projection Matrix, RANSAC Filtering, converting 2D matches to 3D points, and fundamental matrix estimation.
+These four components of the project are what had to figure out in order to complete this reconstruction. 
+Because this project was building something from scratch, it was quite challenging for me to figure out how 
+to implement these subtasks.
+There was nobody to hold my hand, so I had to use what we had learned in lecture and previous projects to 
+figure it out myself.
+However, I always enjoy these types of challenges, as they push me to take initiative and understand everything 
+instead of relying on a stencil to do everything.
+
+I had prior experience using this type of technology during my past internship at the Wisconsin Department of 
+Transportation, but what I did there was very high-level -- using the already implemented OpenCV functions 
+that do these steps in a single line.
+Because of this, it was very cool to see the inner workings of what I had been doing last summer.
+Being able to actually understand what was going on behind the scenes deeply broadened my understanding of 
+Camera Geometry and Computer Vision as a whole.
+Additionally, because this assignment relied heavily on Linear Algebra to be able to compute the matrices, 
+it was really nice being able to apply what I had learned during Linear Algebra last semester to computer 
+science in a real-world scenario.
+As a Math-Computer Science Concentrator, that is what I live for!
+Overall, I really enjoyed the assignment because we were building everything ourselves, from scratch, and 
+pulling everything that I had previously learned about Computer Vision and Math together to create a nice 
+final product!
